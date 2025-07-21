@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recipe App – Login/Register</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="auth-page">
+    <div class="auth-container">
+      <h2 class="auth-title">🍽️ Recipe App – Login / Register</h2>
+
+      <!-- Register Form -->
+      <div id="registerBox" class="box" style="display: none;">
+        <input type="email" id="registerEmail" placeholder="Email" required /><br>
+        <input type="password" id="registerPassword" placeholder="Password" required /><br>
+        <button id="registerBtn">Register</button>
+        <p class="switch-link">Already have an account? <a href="#" id="showLogin">Login here</a></p>
+      </div>
+
+      <!-- Login Form -->
+      <div id="loginBox" class="box">
+        <input type="email" id="loginEmail" placeholder="Email" required /><br>
+        <input type="password" id="loginPassword" placeholder="Password" required /><br>
+        <button id="loginBtn">Login</button>
+        <p class="switch-link">Don't have an account? <a href="#" id="showRegister">Register here</a></p>
+      </div>
+
+      <p id="message" class="centered-msg"></p>
+    </div>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>

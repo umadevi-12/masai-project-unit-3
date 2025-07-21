@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Base Styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  color: #000;
+}
+
+/* Blurred Background Image */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: url('https://cdn.dribbble.com/userupload/20647843/file/original-5b27623eb8f2facdb7efbeb8bf169098.png?resize=1600x1200')
+              no-repeat center center fixed;
+  background-size: cover;
+  filter: blur(12px);
+  z-index: 0;
+}
+
+/* Container for the Form */
+.auth-container {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 30px;
+  width: 350px;
+  max-width: 90%;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  text-align: center;
+}
+
+/* Title */
+.auth-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: rgb(35, 4, 122)
+}
+
+/* Input Fields */
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 10px;
+  border: 2px;
+  background-color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  color: #000;
+  outline: 2px;
+}
+
+/* Placeholder */
+input::placeholder {
+  color: #000;
+  opacity: 1;
+}
+
+/* Buttons */
+button {
+  padding: 12px 24px;
+  margin-top: 10px;
+  background: linear-gradient(to right, hsl(218, 87%, 50%), #179d1a);
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+}
+
+button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Switch Link */
+.switch-link {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.switch-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.switch-link a:hover {
+  text-decoration: underline;
+}
+
+/* Centered Message */
+.centered-msg {
+  margin-top: 10px;
+  font-weight: 500;
+  font-size: 14px;
+  color: red;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .auth-container {
+    padding: 20px;
+    width: 90%;
+  }
+}
+
+
+/* ------------------------- End login pages*/
+

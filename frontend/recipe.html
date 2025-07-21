@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recipe Sharing</title>
+  <link rel="stylesheet" href="style1.css" />
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet" />
+</head>
+<body class="recipe-page">
+
+ <div class="top-bar">
+    <img src="https://media.istockphoto.com/id/2194338339/vector/cute-chef-girl-mascot-logo-holding-a-plate.jpg?s=612x612&w=0&k=20&c=ib8t38oGeQLCaFjRtTZwQzOGYoFoqUD7phgZjfeliXw=" 
+         alt="Chef Mascot" 
+         class="chef-logo" /> 
+    <h2>Welcome to Recipe Share</h2>
+    <button id="darkModeToggle">🌙 Toggle Dark Mode</button>
+    <button id="logoutBtn">Logout</button>
+    <div id="analyticsDashboard" class="dashboard-box"></div>
+  </div>
+
+
+  <div class="user-profile">
+    <h3>👤 User Profile</h3>
+    <p><strong>Email:</strong> <span id="userEmailDisplay">Loading...</span></p>
+
+    <label for="displayName">Name:</label>
+    <input type="text" id="displayName" placeholder="Your name" />
+    <button id="saveNameBtn">Save Name</button>
+
+    <h4>🔐 Security</h4>
+    <input type="email" id="newEmail" placeholder="New email" />
+    <input type="password" id="newPassword" placeholder="New password" />
+    <button id="updateAuthBtn">Update Credentials</button>
+    <button id="deleteAccountBtn">❌ Delete Account</button>
+  </div>
+
+  <form id="recipeForm">
+    <input type="text" id="title" placeholder="Recipe Title" required />
+    <textarea id="ingredients" placeholder="Ingredients (comma separated)" required></textarea>
+    <label>Instructions:</label>
+    <div id="editor" style="height: 200px; background: #fff; margin-bottom: 10px;"></div>
+    <input type="hidden" id="instructions" required />
+    <input type="number" id="servings" placeholder="Servings" />
+    <input type="file" id="productImageInput" accept="image/*" />
+    <img id="imgPreview" style="display:none; width: 200px;" />
+    <input type="file" id="videoUpload" accept="video/*" />
+    <video id="videoPreview" controls style="display:none; width: 200px;"></video>
+    <input type="text" id="tags" placeholder="Tags (e.g., Vegan, Dessert)" />
+    <select id="category">
+      <option value="breakfast">Breakfast</option>
+      <option value="lunch">Lunch</option>
+      <option value="dinner">Dinner</option>
+      <option value="snacks">Snacks</option>
+    </select>
+    <button type="submit">Add Recipe</button>
+  </form>
+
+  <h2 id="recipeSectionTitle">🍽️ All Recipes</h2>
+  <div id="filterBox"></div>
+  <div id="recipesContainer"></div>
+
+  <div id="adjustServingsSection">
+  <label for="desiredServings">Adjust Servings</label>
+  <input type="number" id="desiredServings" placeholder="Enter servings" />
+  <button type="button" onclick="adjustServings()">Adjust</button>
+</div>
+
+
+  <div class="section">
+    <h3>AI Recipe Suggestions</h3>
+    <input type="text" id="availableIngredients" placeholder="Ingredients you have" />
+    <select id="dietaryPreference">
+      <option value="none">No Preference</option>
+      <option value="vegan">Vegan</option>
+      <option value="gluten-free">Gluten-Free</option>
+    </select>
+    <button type="button" onclick="suggestRecipesAI()">Suggest</button>
+    <div id="suggestions"></div>
+  </div>
+
+  <div class="section">
+    <h3>Nutrition Info</h3>
+    <button type="button" onclick="analyzeNutrition()">Analyze</button>
+    <div id="nutritionResult"></div>
+  </div>
+
+  <div class="section">
+    <h3>Ingredient Substitution Suggestions</h3>
+    <textarea id="substitutionIngredients" placeholder="Ingredients (comma separated)"></textarea>
+    <button type="button" onclick="suggestSubstitutions()">Suggest Substitutions</button>
+    <div id="substitutionSuggestions" class="output-box"></div>
+  </div>
+  
+
+  <div class="section">
+    <h3>Weekly Meal Planner</h3>
+    <textarea id="mealPlan" placeholder="Plan your weekly meals here..."></textarea>
+    <button type="button" onclick="saveMealPlan()">Save Plan</button>
+    <span id="saveStatus"></span>
+  </div>
+
+  <div class="section">
+    <h3>Recipe Analytics Dashboard</h3>
+    <p>Views, Likes, Comments analytics will appear here...</p>
+  </div>
+
+  <div class="section">
+    <h3>Recipe Collaboration</h3>
+    <textarea id="forumMessage" placeholder="Share something..."></textarea>
+    <button type="button" onclick="postForum()">Post to Forum</button>
+    <button type="button" onclick="inviteCollaborator()">🤝 Invite</button>
+    <div id="forumContainer"></div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+  
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script type="module" src="recipes.js"></script>
+
+</body>
+</html>
